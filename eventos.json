@@ -1,0 +1,23 @@
+{
+    "eventos" : [
+{
+    "nameOrganizador": "Organizador1",
+    "nameEvento": "Evento1",
+    "date": "02/12/2019",
+    "hourBeggin": "10:00pm",
+    "hourEnd": "2:00am",
+    "services": ["serv1","serv2","serv3"],
+    "prices": [100,200,300],
+    "tipo": "Concierto"
+},
+{
+    "nameOrganizador": "Organizador2",
+    "nameEvento": "Evento2",
+    "date": "02/12/2019",
+    "hourBeggin": "10:00pm",
+    "hourEnd": "2:00am",
+    "services": ["serv1","serv2","serv3"],
+    "prices": [100,200,300],
+    "tipo": "Noesconcierto"
+}]
+}

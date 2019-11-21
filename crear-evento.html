@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/styles-calendar.css">
+  <link rel="stylesheet" type="text/css" href="css/styles2.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-form.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-sidebar.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-topnav.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+</head>
+<body>
+  <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
+        <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
+        <a title="Algo" class="menu-left" href='index2.html' >Eventos Disponibles</a>
+        <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
+        <a title="Home" class=" fa fa-home menu-right" ></a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h1>Crear Evento</h1>
+  </div>
+
+  <section>
+      
+    <div class="div-form">
+    <form action="">
+        
+        <label for="nombre">Nombre del Evento</label>
+        <input type="text" id="nombreEvento" name="nombreEvento" placeholder="Babunny..">
+        <br>
+        <label for="Descripcion">Descripcion</label>
+        <input type="text" id="descrEvento" name="descrEvento" placeholder="Babunny es chido..">
+        <br>
+        
+        
+        <div class="container">
+            <label>Fecha</label>
+            <input type="text" id="datepicker" value="21/11/2019"/>
+        </div>
+
+            <label for="Servicios">Servicios</label>
+            <br>
+
+        <div>
+            <input class="servicios" type="text" id="servicio1" name="servicio1" value="Servicio">
+            <input class="precios" type="text" id="precioservicio1" name="precioservicio1" value="Precio">
+            
+            <input class="servicios hidden " type="text" id="servicio2" name="servicio2" value="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio2" name="precioservicio2" value="Precio">
+            
+            <input class="servicios hidden " type="text" id="servicio3" name="servicio3" value="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio3" name="precioservicio3" value="Precio">
+            
+            <input class="servicios hidden " type="text" id="servicio4" name="servicio4" value="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio4" name="precioservicio4" value="Precio">
+            
+            <input class="servicios hidden " type="text" id="servicio5" name="servicio5" value="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio5" name="precioservicio5" value="Precio">
+
+            <div id="agregaServicio" class="circle-form" onclick="agregaServicio()" >
+                    <div class="horizontal" style="float: right"></div>
+                    <div class="vertical" style="float: right"></div>
+            </div>
+        </div>
+        <br>
+
+        
+        
+        <div>
+            <label for="horaInicio" >Hora Inicio</label>
+            <br>
+            <input type="time" id="timeInicio" name="appt" value="18:30"  required>
+        </div>
+        
+        <div>
+            <label for="horaInicio">Hora Termino</label>
+            <br>
+            <input type="time" id="timeTermino" name="appt" value="23:30" required>
+        </div>
+
+        <div>
+
+        </div>
+        
+        <label for="Tipo">Tipo de Evento</label>
+        <br>
+        <br>
+        <label class="container-tipo">Tipo1
+        <input type="radio" checked="checked" name="radio"  value="tipo1">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container-tipo">Tipo2
+        <input type="radio" name="radio" value="tipo2" >
+        <span class="checkmark"></span>
+        </label>
+        <label class="container-tipo">Tipo3
+        <input type="radio" name="radio"  value="tipo3">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container-tipo">Otro
+        <input type="radio" name="radio"  value="otro">
+        <span class="checkmark"></span>
+        </label>
+
+        
+        <br>
+        <br>
+        <br>
+        <a   class="redondo-registro" onclick="getDatosEvento(this)"> CONFIRMAR</a>
+
+      </form>
+      
+    </div>
+
+
+  </section>
+
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="confirmarCompra(this)"><i class="fas fa-times"></i></a>
+      <h3>CONFIRMAR COMPRA</h3>
+      <h4 id='h4-costo-total-popup'>Costo total [monto del costo]</h4>
+      <div class="div-cosa-verde" >
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="confirmarCompra(this)"> CONFIRMAR</a>
+    </div>
+    </div>
+  </div>
+  
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="calendar.js"></script>
+  
+  <script type="text/javascript">
+    var foopicker = new FooPicker({
+      id: 'datepicker',
+      dateFormat: 'dd/MM/yyyy'//,
+      //disable: ['29/07/2017', '30/07/2017', '31/07/2017', '01/08/2017']
+    });
+
+
+    let $time =  $('#timeInicio')
+
+   
+    function getDatosEvento(){
+        //console.log(foopicker.getMonthNumber())
+        console.log(mioMes)
+        console.log(mioAnio)
+        console.log(mioDia)
+        console.log($time.val())
+    }
+
+    var contServicios = 1;
+
+    function agregaServicio(){
+        contServicios = contServicios + 1;
+
+        idServicio = "servicio" + contServicios
+        idPrecio = "precio" + idServicio
+
+        console.log(idServicio)
+        console.log(idPrecio)
+
+        let $servicio =  $('#' + idServicio)
+        let $precio =  $('#' + idPrecio)
+
+        $servicio.removeClass('hidden')
+        $precio.removeClass('hidden')
+
+        if( contServicios == 5){
+            console.log("ya")
+            let $agregaServicio = $("#agregaServicio")
+            $agregaServicio.addClass('hidden') 
+        }
+
+    }
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <header>
+      <h1>Registry Form</h1>
+  </header>
+  <nav>
+     <ul id="menu">
+         <li>Home</li>
+         <li>About the site</li>
+         <li>Registry</li>
+         <li>Contact</li>
+         <li>Copyright</li>
+     </ul> 
+  </nav>
+  <section>
+    <fieldset>
+        <legend>New account registry</legend>
+        <span id="information">
+          Your information is safe with us
+        </span>
+        <label>Complete Name:</label>
+        <br>
+        <input type="text" class="formElement" name="name" placeholder="Tu nombre">
+
+        <br><br>
+
+        <label>Email:</label>
+        <br>
+        <input type="email" class="formElement" name="email">
+
+        <br><br>
+
+        <label>Password:</label>
+        <br>
+        <input type="password" class="formElement" name="password">
+
+        <br><br>
+
+        <label>Password confirmtion:</label>
+        <br>
+        <input type="password" class="formElement" name="password_confirmation">
+
+        <br><br>
+
+        <label>Country</label>
+        <br>
+        <select class="formElement">
+          <option>Select a country</option>
+          <option>Mexico</option>
+          <option>USA</option>
+        </select>
+
+        <br><br>
+
+        <label>Gender</label>
+        <br>
+        <input type="radio" name="gender" value="M">Masculine
+        <br>
+        <input type="radio" name="gender" value="F">Femenine
+
+        <br><br>
+
+        <input type="button" name="cancel" value="Cancel">
+        <input type="button" name="submit" value="Submit">
+        
+      </fieldset>
+          
+  </section>
+  
+
+</body>
+</html>
