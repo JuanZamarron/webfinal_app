@@ -15,7 +15,7 @@
 <body>
   <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
         <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
-        <a title="Algo" class="menu-left" href='index2.html' >Eventos Disponibles</a>
+        <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
         <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
         <a title="Home" class=" fa fa-home menu-right" ></a>
   </div>
@@ -58,20 +58,30 @@
             <br>
 
         <div>
-            <input class="servicios" type="text" id="servicio1" name="servicio1" value="Servicio">
-            <input class="precios" type="text" id="precioservicio1" name="precioservicio1" value="Precio">
+            <input class="servicios" type="text" id="servicio1" name="servicio1" placeholder="Servicio">
+            <input class="precios" type="text" id="precioservicio1" name="precioservicio1" placeholder="Precio">
+            <a id="btnCloseservicio1" href="javascript:void(0)" class="closebtn " onclick="cerrarServicios()">&times;</a>
+            <br id="brservicio1"  >
             
-            <input class="servicios hidden " type="text" id="servicio2" name="servicio2" value="Servicio">
-            <input class="precios hidden " type="text" id="precioservicio2" name="precioservicio2" value="Precio">
+            <input class="servicios hidden " type="text" id="servicio2" name="servicio2" placeholder="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio2" name="precioservicio2" placeholder="Precio">
+            <a id="btnCloseservicio2" href="javascript:void(0)" class="closebtn hidden" onclick="cerrarServicios()">&times;</a>
+            <br id="brservicio2" class="hidden" >
             
-            <input class="servicios hidden " type="text" id="servicio3" name="servicio3" value="Servicio">
-            <input class="precios hidden " type="text" id="precioservicio3" name="precioservicio3" value="Precio">
+            <input class="servicios hidden " type="text" id="servicio3" name="servicio3" placeholder="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio3" name="precioservicio3" placeholder="Precio">
+            <a id="btnCloseservicio3" href="javascript:void(0)" class="closebtn hidden" onclick="cerrarServicios()">&times;</a>
+            <br id="brservicio3" class="hidden" >
             
-            <input class="servicios hidden " type="text" id="servicio4" name="servicio4" value="Servicio">
-            <input class="precios hidden " type="text" id="precioservicio4" name="precioservicio4" value="Precio">
+            <input class="servicios hidden " type="text" id="servicio4" name="servicio4" placeholder="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio4" name="precioservicio4" placeholder="Precio">
+            <a id="btnCloseservicio4" href="javascript:void(0)" class="closebtn hidden" onclick="cerrarServicios()">&times;</a>
+            <br id="brservicio4" class="hidden" >
             
-            <input class="servicios hidden " type="text" id="servicio5" name="servicio5" value="Servicio">
-            <input class="precios hidden " type="text" id="precioservicio5" name="precioservicio5" value="Precio">
+            <input class="servicios hidden " type="text" id="servicio5" name="servicio5" placeholder="Servicio">
+            <input class="precios hidden " type="text" id="precioservicio5" name="precioservicio5" placeholder="Precio">
+            <a id="btnCloseservicio5" href="javascript:void(0)" class="closebtn hidden" onclick="cerrarServicios()">&times;</a>
+            <br id="brservicio5" class="hidden" >
 
             <div id="agregaServicio" class="circle-form" onclick="agregaServicio()" >
                     <div class="horizontal" style="float: right"></div>
@@ -102,27 +112,27 @@
         <br>
         <br>
         <label class="container-tipo">Tipo1
-        <input type="radio" checked="checked" name="radio"  value="tipo1">
+        <input type="radio" checked="checked" name="tipo"  value="tipo1">
         <span class="checkmark"></span>
         </label>
         <label class="container-tipo">Tipo2
-        <input type="radio" name="radio" value="tipo2" >
+        <input type="radio" name="tipo" value="tipo2" >
         <span class="checkmark"></span>
         </label>
         <label class="container-tipo">Tipo3
-        <input type="radio" name="radio"  value="tipo3">
+        <input type="radio" name="tipo"  value="tipo3">
         <span class="checkmark"></span>
         </label>
         <label class="container-tipo">Otro
-        <input type="radio" name="radio"  value="otro">
+        <input type="radio" name="tipo"  value="otro">
         <span class="checkmark"></span>
         </label>
 
         
         <br>
-        <br>
-        <br>
         <a   class="redondo-registro" onclick="getDatosEvento(this)"> CONFIRMAR</a>
+        <br>
+        <br>
 
       </form>
       
@@ -149,6 +159,13 @@
   <script type="text/javascript" src="calendar.js"></script>
   
   <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
     var foopicker = new FooPicker({
       id: 'datepicker',
       dateFormat: 'dd/MM/yyyy'//,
@@ -156,15 +173,42 @@
     });
 
 
-    let $time =  $('#timeInicio')
+    let $timeInicio =  $('#timeInicio')
+    let $timeTermino =  $('#timeTermino')
+    let $nombreEvento = $('#nombreEvento')
+    let $descrEvento = $('#descrEvento')
+    let $radioTipo = $("input[name='tipo']:checked")
 
    
     function getDatosEvento(){
         //console.log(foopicker.getMonthNumber())
+        console.log($nombreEvento.val())
+        console.log($descrEvento.val())
         console.log(mioMes)
         console.log(mioAnio)
         console.log(mioDia)
-        console.log($time.val())
+        console.log($timeInicio.val())
+        console.log($timeTermino.val())
+        console.log($radioTipo.val())
+
+        arrServicio = []
+
+        for (var i = 1 ; i <= contServicios ; i++ ){
+          idServicio = "servicio" + i
+          idPrecio = "precio" + idServicio
+
+          let $servicio =  $('#' + idServicio)
+          let $precio =  $('#' + idPrecio)
+
+          arrServicio.push({
+            "servicio":$servicio.val(),
+            "precio":$precio.val()
+          })
+
+        }
+        console.log(arrServicio)
+
+
     }
 
     var contServicios = 1;
@@ -174,25 +218,70 @@
 
         idServicio = "servicio" + contServicios
         idPrecio = "precio" + idServicio
+        idBr = "br" + idServicio
+        idClose = "btnClose" + idServicio
+        idCloseLast = "btnClose" + "servicio" + (contServicios - 1)
 
-        console.log(idServicio)
-        console.log(idPrecio)
+        //console.log(idServicio)
+        //console.log(idPrecio)
+        //console.log(idClose)
+        //console.log(idCloseLast)
 
         let $servicio =  $('#' + idServicio)
         let $precio =  $('#' + idPrecio)
+        let $br = $('#' + idBr )
+        let $close = $('#' + idClose)
+        let $closeLast = $('#' + idCloseLast)
 
         $servicio.removeClass('hidden')
         $precio.removeClass('hidden')
+        $br.removeClass('hidden')
+        $close.removeClass('hidden')
+        $closeLast.addClass('hidden')
+
 
         if( contServicios == 5){
-            console.log("ya")
+            //console.log("ya")
             let $agregaServicio = $("#agregaServicio")
             $agregaServicio.addClass('hidden') 
         }
-
     }
 
 
+    function cerrarServicios(){
+      
+
+      //console.log(contServicios)
+
+      idServicio = "servicio" + contServicios
+      idPrecio = "precio" + idServicio
+      idBr = "br" + idServicio
+      idClose = "btnClose" + idServicio
+      idCloseLast = "btnClose" + "servicio" + (contServicios - 1)
+    
+      let $servicio =  $('#' + idServicio)
+      let $precio =  $('#' + idPrecio)
+      let $br = $('#' + idBr )
+      let $close = $('#' + idClose)
+      let $closeLast = $('#' + idCloseLast)
+
+      $servicio.addClass('hidden')
+      $precio.addClass('hidden')
+      $br.addClass('hidden')
+      $close.addClass('hidden')
+      $closeLast.removeClass('hidden')
+
+      contServicios = contServicios - 1;
+
+      if( contServicios <= 0){
+        contServicios = 0
+      }
+      if( contServicios < 5  ){
+        let $agregaServicio = $("#agregaServicio")
+        $agregaServicio.removeClass('hidden') 
+      }
+    
+    }
 
   </script>
 

@@ -150,3 +150,12 @@ input[type=text], select {
 	border-radius: 50%;
 	background: white;
 }
+
+.closebtn {
+  text-decoration: none;
+  position: absolute;
+  font-size: 36px;
+  margin-left: 4px;
+  margin-top: 9px;
+  color: black;
+}
