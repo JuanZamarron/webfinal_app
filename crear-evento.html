@@ -17,6 +17,7 @@
         <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
         <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
         <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
+        <a title="Algo" class="menu-left" href='login.html' >Login</a>
         <a title="Home" class=" fa fa-home menu-right" ></a>
   </div>
 
@@ -58,7 +59,7 @@
             <br>
 
         <div>
-            <input class="servicios" type="text" id="servicio1" name="servicio1" placeholder="Servicio">
+            <input class="servicios" type="text" id="servicio1" name="servicio1" placeholder="Servicio" val="" >
             <input class="precios" type="text" id="precioservicio1" name="precioservicio1" placeholder="Precio">
             <a id="btnCloseservicio1" href="javascript:void(0)" class="closebtn " onclick="cerrarServicios()">&times;</a>
             <br id="brservicio1"  >
@@ -130,7 +131,7 @@
 
         
         <br>
-        <a   class="redondo-registro" onclick="getDatosEvento(this)"> CONFIRMAR</a>
+        <a   class="redondo-registro" onclick="getDatosEvento(this)"> Crear Evento</a>
         <br>
         <br>
 
@@ -179,8 +180,10 @@
     let $descrEvento = $('#descrEvento')
     let $radioTipo = $("input[name='tipo']:checked")
 
-   
+    eventoCorrecto = true;
+
     function getDatosEvento(){
+        eventoCorrecto = true;
         //console.log(foopicker.getMonthNumber())
         console.log($nombreEvento.val())
         console.log($descrEvento.val())
@@ -191,6 +194,18 @@
         console.log($timeTermino.val())
         console.log($radioTipo.val())
 
+        $nombreEvento.removeClass('box-incorrecto-rojo')
+        $descrEvento.removeClass('box-incorrecto-rojo')
+
+        if( !$nombreEvento.val() ){
+          eventoCorrecto = false 
+          $nombreEvento.addClass('box-incorrecto-rojo')
+        }
+        if( !$descrEvento.val() ){
+          eventoCorrecto = false 
+          $descrEvento.addClass('box-incorrecto-rojo')
+        }
+
         arrServicio = []
 
         for (var i = 1 ; i <= contServicios ; i++ ){
@@ -200,13 +215,36 @@
           let $servicio =  $('#' + idServicio)
           let $precio =  $('#' + idPrecio)
 
+          $servicio.removeClass('box-incorrecto-rojo')
+          $precio.removeClass('box-incorrecto-rojo')
+
+          if( !$servicio.val() ){
+            eventoCorrecto = false 
+            $servicio.addClass('box-incorrecto-rojo')
+          }
+          
+
+          let regex=/^[0-9]+$/;
+
+          if( !$precio.val() || !$precio.val().match(regex)  ){
+            eventoCorrecto = false 
+            $precio.addClass('box-incorrecto-rojo')
+          }
+
           arrServicio.push({
             "servicio":$servicio.val(),
             "precio":$precio.val()
           })
 
         }
-        console.log(arrServicio)
+
+        if( eventoCorrecto ){
+          console.log(arrServicio)
+        }
+        else{
+          console.log("Servicio Incorrecto")
+        }
+        
 
 
     }
@@ -238,7 +276,6 @@
         $br.removeClass('hidden')
         $close.removeClass('hidden')
         $closeLast.addClass('hidden')
-
 
         if( contServicios == 5){
             //console.log("ya")
