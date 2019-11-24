@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/styles2.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/styles-form.css">
+    <link rel="stylesheet" type="text/css" href="css/styles-popup.css">
+    
+    
+
+<div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <h1>LOGIN</h1>
+      
+      <form action="">
+        <input class="fa" type="text" id="email" name="email" placeholder="&#xf003  Email">
+      </form>
+      <form action="">
+        <input class="fa" type="password" id="password" name="password" placeholder="&#xf023   &#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF">
+      </form>
+      <br>
+      <div class="div-cosa-verde" >
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="login()">  LOGIN  </a>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <a > Not a member? </a><a style="color: black" href='new-user.html'>Sign up here</a>
+    </div>
+    
+    </div>
+
+    
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script>
+    let $overlay = $('#overlay')
+    let $popup = $('#popup')
+    let $h4costototal = $('#h4-costo-total-popup')
+
+    $overlay.addClass('active')
+    $popup.addClass('active')
+
+    function login(){
+      let $email = $('#email')
+      let $password = $('#password')
+
+      console.log($email.val())
+      console.log($password.val())
+
+      var loginCorrecto = true
+
+      $email.removeClass('box-incorrecto-rojo')
+      $password.removeClass('box-incorrecto-rojo')
+
+      if( !$email.val() ){
+        loginCorrecto = false
+        $email.addClass('box-incorrecto-rojo')
+      }
+      if( !$password.val() ){
+        loginCorrecto = false
+        $password.addClass('box-incorrecto-rojo')
+
+      }
+
+
+    }
+
+
+
+  </script>
+
+</body>
+</html>
