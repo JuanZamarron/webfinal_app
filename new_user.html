@@ -13,23 +13,32 @@
 
 <div class="overlay" id="overlay">
     <div class="popup" id="popup">
-      <h1>LOGIN</h1>
+      <h1>Register</h1>
       
+      <form action="">
+        <input class="fa" type="text" id="name" name="name" placeholder="&#xf1ae  Name">
+      </form>
       <form action="">
         <input class="fa" type="text" id="email" name="email" placeholder="&#xf003  Email">
       </form>
       <form action="">
-        <input class="fa" type="password" id="password" name="password" placeholder="&#xf023   &#x25CF&#x25CF&#x25CF&#x25CF&#x25CF&#x25CF">
+        <input class="fa" type="text" id="phone" name="phone" placeholder="&#xf095  Phone">
       </form>
+      <form action="">
+        <input class="fa" type="password" id="password" name="password" placeholder="&#xf023   Password">
+      </form>
+      
+      <form action="">
+        <input class="fa" type="password" id="confirm_password" name="confirm_password" placeholder="&#xf023 Confirmo Password ">
+      </form>
+      <a id="match_password" style='color:red' class="hidden" > Password and Confirmation don't match </a>
+      <br>
       <br>
       <div class="div-cosa-verde" >
-        <a id="btn-cerrar-popup" class="redondo-registro" onclick="login()">  LOGIN  </a>
-
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="login()">  Register  </a>
+        
         <br>
         <br>
-        <br>
-        <br>
-        <a > Not a member? </a><a style="color: black" href='new_user.html'>Sign up here</a>
     </div>
     
     </div>
@@ -51,7 +60,13 @@
 
     function login(){
       let $email = $('#email')
+      let $name = $('#name')
       let $password = $('#password')
+      let $confpassword = $('#confirm_password')
+      let $phone = $('#phone')
+      let $match_password = $('#match_password')
+
+      $match_password.addClass('hidden')
 
       var loginCorrecto = true
 
@@ -66,12 +81,32 @@
         loginCorrecto = false
         $password.addClass('box-incorrecto-rojo')
       }
+      if( !$confpassword.val() ){
+        loginCorrecto = false
+        $confpassword.addClass('box-incorrecto-rojo')
+      }
+      if( !$phone.val() ){
+        loginCorrecto = false
+        $phone.addClass('box-incorrecto-rojo')
+      }
+      if( !$name.val() ){
+        loginCorrecto = false
+        $name.addClass('box-incorrecto-rojo')
+      }
+      if( $password.val() != $confpassword.val() ){
+          loginCorrecto = false
+          $confpassword.addClass('box-incorrecto-rojo')
+          $password.addClass('box-incorrecto-rojo')
+          $match_password.removeClass('hidden')
+      }
 
       if( loginCorrecto ){
         console.log($email.val())
         console.log($password.val())
+        console.log($confpassword.val())
+        console.log($name.val())
+        console.log($phone.val())
       }
-
 
     }
 
