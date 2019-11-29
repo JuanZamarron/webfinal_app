@@ -1,0 +1,217 @@
+
+
+
+.evento{
+    border-radius: 15px;
+    margin: 50px;
+    padding: 20px;
+    background-color: white;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    overflow: hidden;
+    font-size: 25px;
+    
+  }
+  
+  .evento-registro{
+    border-radius: 15px 15px 0px 0px ;
+    margin: 50px 200px 0px 200px;
+    padding: 20px;
+    background-color: white;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    overflow: hidden;
+    font-size: 25px;
+  }
+  
+  .box-registro{
+    border-radius: 0px 0px 15px 15px;
+    margin: 0px 200px 50px 200px;
+    padding: 20px;
+    background-color: white;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    overflow: hidden;
+    font-size: 25px;
+  }
+  
+  .cosas-izquierda{
+    float: left !important ;
+    width: 300px;
+  
+  }
+  
+  .cosas-derecha{
+    float: right !important;
+    border-left: 1px #cdd0d2 solid;
+  }
+  
+  .cosas-enmedio >div{
+    padding: 8px;
+  }
+  
+  .cosas-enmedio > div > a{
+    padding: 10px;
+  }
+  
+  .div-cosas{
+    padding: 8px;
+  }
+  
+  .div-cosa-verde{
+    padding: 20px;
+  }
+  
+  
+  
+  .redondo {
+    border-color: #cdd0d2;
+    border-style: solid;
+    border-radius: 15px;
+    background: #73AD21;
+    padding: 10px; 
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  .redondo-registro {
+    border-color: #cdd0d2;
+    border-style: solid;
+    cursor: pointer;
+    border-radius: 15px;
+    background: #73AD21;
+    padding: 10px; 
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  .redondo-registro:hover {
+    border-color: #cdd0d2;
+    border-style: solid;
+    color: white;
+    border-radius: 15px;
+    background: green;
+    padding: 10px; 
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  
+  .i-algo {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .redondo-registro:hover > i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .div-servicios{
+    width: 300px;
+    border-right: 1px #cdd0d2 solid;
+  }
+  
+  
+  .redondo-servicio-not-selected {
+    margin: 10px;
+    border-radius: 15px;
+    border-color: #cdd0d2;
+    border-style: solid;
+    background: white;
+    padding: 10px; 
+    cursor: pointer;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  .redondo-servicio-selected {
+    margin: 10px;
+    border-radius: 15px;
+    border-color: #cdd0d2;
+    border-style: solid;
+    background: #73AD21;
+    padding: 10px; 
+    color: white;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  .redondo-servicio-not-selected:hover {
+    margin: 10px;
+    border-radius: 15px;
+    border-color: #cdd0d2;
+    border-style: solid;
+    background: #73AD21;
+    padding: 10px; 
+    color: white;
+    cursor: pointer;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+  
+  .div-costos{
+    float: right !important;
+    margin: 20px 80px 0px 50px;
+  }
+  
+  
+  .circle {
+    position: relative;
+    width: 1.55em;
+    height: 1.5em;
+    border-radius: 100%;
+    border: solid .5em #DFDAD7;
+  }
+  .horizontal {
+    position: absolute;
+    background-color: red;
+    width: 20px;
+    height: 5px;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -2.5px;
+  }
+  .vertical {
+    position: absolute;
+    background-color: red;
+    width: 5px;
+    height: 20px;
+    left: 50%;
+    margin-left: -2.5px;
+    top: 50%;
+    margin-top: -10px;
+  }
+  
+  .circle:hover{
+    border: solid .5em grey;
+  }
+  
+  .circle:active{
+    border: solid .5em black;
+  }
+  
+  .circulo-derecha{
+    float: right !important;
+  }
+  
+  .circulo-izquierda{
+    float: left !important;
+  }
+  
+  .numero-boletos{
+    margin: 10px 63px 20px 63px; 
+    padding: 10px 10px 0px 10px;
+  }
+  
+  .servicios-registrados{
+    padding: 30px 10px 10px 10px;
+  }
+
+  .servicio{
+    border: 0px 5px 0px 5px;
+  }

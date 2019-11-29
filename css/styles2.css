@@ -1,34 +1,36 @@
 
 .evento{
   border-radius: 15px;
-  margin: 50px;
+  margin: 50px 200px 0px 200px;
   padding: 20px;
   background-color: white;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   overflow: hidden;
+  font-size: 25px;
 }
 
 .evento-registro{
   border-radius: 15px 15px 0px 0px ;
-  margin: 50px 50px 0px 50px;
+  margin: 50px 200px 0px 200px;
   padding: 20px;
   background-color: white;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   overflow: hidden;
+  font-size: 25px;
 }
 
 .box-registro{
   border-radius: 0px 0px 15px 15px;
-  margin: 0px 50px 50px 50px;
+  margin: 0px 200px 0px 200px;
   padding: 20px;
   background-color: white;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   overflow: hidden;
+  font-size: 25px;
 }
 
 .cosas-izquierda{
   float: left !important ;
-  border-right: 1px #cdd0d2 solid;
   width: 200px;
 
 }
@@ -110,7 +112,6 @@
 
 .div-servicios{
   width: 300px;
-  border-right: 1px #cdd0d2 solid;
 }
 
 
@@ -151,7 +152,7 @@
 
 .div-costos{
   float: right !important;
-  margin: 20px 80px 0px 50px;
+  margin: 20px 50px 0px 50px;
 }
 
 
@@ -201,6 +202,6 @@
 
 .numero-boletos{
   margin: 10px 63px 20px 63px; 
-  padding: 10px 10px 0px 10px;
+  padding: 10px 10px 0px 60px;
 }
 
