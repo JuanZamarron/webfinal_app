@@ -31,7 +31,7 @@
 
 .cosas-izquierda{
   float: left !important ;
-  width: 200px;
+  width: 60%;
 
 }
 
@@ -56,6 +56,12 @@
   padding: 20px;
 }
 
+.titulo-pagina{
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 100px;
+}
 
 
 .redondo {

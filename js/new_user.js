@@ -13,6 +13,8 @@
       let $confpassword = $('#confirm_password')
       let $phone = $('#phone')
       let $match_password = $('#match_password')
+      let $confirmacionUsuarioCreado1 = $('#confirmacionUsuarioCreado1')
+      let $confirmacionUsuarioCreado2 = $('#confirmacionUsuarioCreado2')
 
       $match_password.addClass('hidden')
 
@@ -23,6 +25,10 @@
       $confpassword.removeClass('box-incorrecto-rojo')
       $phone.removeClass('box-incorrecto-rojo')
       $name.removeClass('box-incorrecto-rojo')
+      $name.removeClass('box-incorrecto-rojo')
+      
+      $confirmacionUsuarioCreado1.addClass('hidden')
+      $confirmacionUsuarioCreado2.addClass('hidden')
 
       if( !$email.val() ){
         loginCorrecto = false
@@ -57,6 +63,10 @@
         console.log($confpassword.val())
         console.log($name.val())
         console.log($phone.val())
+
+        $confirmacionUsuarioCreado1.removeClass('hidden')
+        $confirmacionUsuarioCreado2.removeClass('hidden')
+
       }
 
     }

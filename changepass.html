@@ -8,16 +8,27 @@
     <link rel="stylesheet" type="text/css" href="css/styles-topnav.css">
     <link rel="stylesheet" type="text/css" href="css/styles-form.css">
     <link rel="stylesheet" type="text/css" href="css/styles-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/styles-sidebar.css">    
     
-    <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
-        <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
-        <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
-        <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
-        <a title="Algo" class="menu-left" href='login.html' >Login</a>
-        <a title="Algo" class="menu-left" href='ver_eventos_asistente.html' >Eventos Asistente</a>
-        <a title="Algo" class="menu-left" href='ver_eventos_organizador.html' >Eventos Organizador</a>
-        <a title="Home" class=" fa fa-home menu-right" ></a>
-  </div>
+  <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
+    <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
+    
+    <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
+    <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
+    <a title="Algo" class="menu-left" href='ver_eventos_asistente.html' >Eventos Que Asistes</a>
+    <a title="Algo" class="menu-left" href='ver_eventos_organizador.html' >Eventos Que Organizas</a>
+    <a title="Home" class=" fa fa-home menu-right" href='index.html' ></a>
+</div>
+
+<div id="mySidenav" class="sidenav">
+<i href="javascript:void(0)" style="text-align:center" class="closebtn sidebar-icon" onclick="closeNav()">&times;</i>
+<a style='font-size: 100px; text-align:center' class="fas fa-user-circle sidebarnolink" ></a>
+<a class="sidebarnolink" >Hola Alberto!!!</a>
+<a class="sidebarlink" href="changepass.html">Change Password</a>
+<a class="sidebarlink"  href="ver_eventos_asistente.html">Eventos que asistes</a>
+<a class="sidebarlink"  href="ver_eventos_organizador.html">Eventos que organizas</a>
+<a class="sidebarlink"  onclick="logout()"> Log out  <i style="font-size: 20px" class="fas fa-sign-out-alt"></i></a>
+</div>
 
 <br>
 <br>

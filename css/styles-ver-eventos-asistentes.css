@@ -31,10 +31,20 @@
     overflow: hidden;
     font-size: 25px;
   }
+
+  
+.titulo-pagina{
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 100px;
+}
+
+
   
   .cosas-izquierda{
     float: left !important ;
-    width: 350px;
+    width: 60%;
   
   }
   
