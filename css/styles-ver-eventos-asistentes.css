@@ -34,7 +34,7 @@
   
   .cosas-izquierda{
     float: left !important ;
-    width: 300px;
+    width: 350px;
   
   }
   
@@ -214,4 +214,9 @@
 
   .servicio{
     border: 0px 5px 0px 5px;
+  }
+  
+  .servicio-organizador{
+    margin: 10px;
+    
   }

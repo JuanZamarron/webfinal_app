@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/styles2.css">
+    <link rel="stylesheet" type="text/css" href="css/styles-topnav.css">
+    <link rel="stylesheet" type="text/css" href="css/styles-form.css">
+    <link rel="stylesheet" type="text/css" href="css/styles-popup.css">
+    
+    <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
+        <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
+        <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
+        <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
+        <a title="Algo" class="menu-left" href='login.html' >Login</a>
+        <a title="Algo" class="menu-left" href='ver_eventos_asistente.html' >Eventos Asistente</a>
+        <a title="Algo" class="menu-left" href='ver_eventos_organizador.html' >Eventos Organizador</a>
+        <a title="Home" class=" fa fa-home menu-right" ></a>
+  </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="perfil" id="overlay">
+    <div class="popup" id="popup">
+      <h1>Change Password</h1>
+      
+      <form action="">
+        <input class="fa" type="password" id="password" name="password" placeholder="&#xf023   Password">
+      </form>
+      
+      <form action="">
+        <input class="fa" type="password" id="confirm_password" name="confirm_password" placeholder="&#xf023  Confirm Password ">
+      </form>
+      <a id="match_password" style='color:red' class="hidden" > Password and Confirmation don't match </a>
+      <br>
+      <br>
+      <div class="div-cosa-verde" >
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="login()">  Register  </a>
+        
+        <br>
+        <br>
+    </div>
+    
+    </div>
+
+    
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script>
+    let $overlay = $('#overlay')
+    let $popup = $('#popup')
+    let $h4costototal = $('#h4-costo-total-popup')
+
+    $overlay.addClass('active')
+    $popup.addClass('active')
+
+    function login(){
+      let $password = $('#password')
+      let $confpassword = $('#confirm_password')
+      let $match_password = $('#match_password')
+
+      $match_password.addClass('hidden')
+
+      var loginCorrecto = true
+
+      $email.removeClass('box-incorrecto-rojo')
+      $password.removeClass('box-incorrecto-rojo')
+
+      if( !$password.val() ){
+        loginCorrecto = false
+        $password.addClass('box-incorrecto-rojo')
+      }
+      if( !$confpassword.val() ){
+        loginCorrecto = false
+        $confpassword.addClass('box-incorrecto-rojo')
+      }
+      if( $password.val() != $confpassword.val() ){
+          loginCorrecto = false
+          $confpassword.addClass('box-incorrecto-rojo')
+          $password.addClass('box-incorrecto-rojo')
+          $match_password.removeClass('hidden')
+      }
+
+      if( loginCorrecto ){
+        console.log($password.val())
+        console.log($confpassword.val())
+      }
+
+    }
+
+
+
+  </script>
+
+</body>
+</html>

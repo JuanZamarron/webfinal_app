@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/styles-ver-eventos-asistentes.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-sidebar.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-topnav.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+</head>
+<body>
+  <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
+        <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
+        <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
+        <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
+        <a title="Algo" class="menu-left" href='login.html' >Login</a>
+        <a title="Algo" class="menu-left" href='ver_eventos_asistente.html' >Eventos Asistente</a>
+        <a title="Home" class=" fa fa-home menu-right" ></a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Mi Perfil</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h1>Eventos que Organizas</h1>
+  </div>
+
+  <section>
+      <li>
+        <div id="evento1" class="evento-registro" >
+          <div class="cosas-izquierda" >
+            <div class="div-cosas" >
+              <a>Nombre Evento</a>
+            </div>
+            <div class="div-cosas" >
+                <a>Costo: $1000</a>
+            </div>
+            
+            <div class="div-cosas" >
+                <a>Numero de Asistentes: 64</a>
+              </div>
+            
+            <div class="div-cosa-verde" >
+                <a class="redondo">Tipo Evento</a>
+              </div>
+          </div>
+          
+          <div class="cosas-derecha" >
+              <div class="div-cosas" >
+                  <a >Fecha</a>
+                </div>
+                <div class="div-cosas" >
+                  <a>HoraInicio HoraFinal</a>
+                </div>
+          </div>
+          
+        </div>
+        
+        <div id='box-registro-1' class="box-registro">
+              <a >Servicios Disponibles</a>
+              <div  >
+                    <div class="redondo servicio-organizador" style="width: 30%" >
+                      <a>Servicio 1</a>
+                      <br>
+                      <a>$200</a>
+                      <br>
+                      <a>64 personas</a>
+                    </div>
+
+                    <div class="redondo servicio-organizador" style="width: 30%" >
+                        <a>Servicio 1</a>
+                        <br>
+                        <a>$200</a>
+                        <br>
+                        <a>64 personas</a>
+                    </div>
+                </div>
+        </div>
+      </li>
+
+
+      <li>
+          <div class="evento" >
+            <div class="cosas-izquierda" >
+              <div >
+                <a>Evento2</a>
+              </div>
+              <div  >
+                <a>Algo abajo</a>
+              </div>
+              <div>
+                  <a class="redondo">Tipo Evento</a>
+                </div>
+            </div>
+            <div class="cosas-enmedio" >
+              <div>
+                <a>Descripcion evento </a>
+              </div>
+            </div>
+            <div class="cosas-derecha" >
+                <div >
+                    <a >Fecha</a>
+                  </div>
+                  <div>
+                    <a>HoraInicio HoraFinal</a>
+                  </div>
+            </div>
+          </div>
+        </li>
+
+  </section>
+
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="confirmarCompra(this)"><i class="fas fa-times"></i></a>
+      <h3>CONFIRMAR COMPRA</h3>
+      <h4 id='h4-costo-total-popup'>Costo total [monto del costo]</h4>
+      <div class="div-cosa-verde" >
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="confirmarCompra(this)"> CONFIRMAR</a>
+    </div>
+    </div>
+  </div>
+  
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+
+    </script>
+
+</body>
+</html>
