@@ -13,8 +13,8 @@
       let $confpassword = $('#confirm_password')
       let $phone = $('#phone')
       let $match_password = $('#match_password')
-      let $confirmacionUsuarioCreado1 = $('#confirmacionUsuarioCreado1')
-      let $confirmacionUsuarioCreado2 = $('#confirmacionUsuarioCreado2')
+      $('#confirmacionUsuarioCreado1').addClass('hidden')
+      $('#confirmacionUsuarioCreado2').addClass('hidden')
 
       $match_password.addClass('hidden')
 
@@ -26,9 +26,6 @@
       $phone.removeClass('box-incorrecto-rojo')
       $name.removeClass('box-incorrecto-rojo')
       $name.removeClass('box-incorrecto-rojo')
-      
-      $confirmacionUsuarioCreado1.addClass('hidden')
-      $confirmacionUsuarioCreado2.addClass('hidden')
 
       if( !$email.val() ){
         loginCorrecto = false
@@ -58,14 +55,50 @@
       }
 
       if( loginCorrecto ){
-        console.log($email.val())
-        console.log($password.val())
-        console.log($confpassword.val())
-        console.log($name.val())
-        console.log($phone.val())
-
-        $confirmacionUsuarioCreado1.removeClass('hidden')
-        $confirmacionUsuarioCreado2.removeClass('hidden')
+        let email = $('#email').val()
+        let name = $('#name').val()
+        let phone = $('#phone').val()
+        let password = $('#password').val()
+        json_to_send = {
+          "name": name,
+          "phone": phone,
+          "email": email,
+          "password": password 
+        };
+        json_to_send = JSON.stringify(json_to_send);
+        console.log(json_to_send)
+        $.ajax({
+          url: 'https://webfinal-api.herokuapp.com/createUser',
+          headers:{
+            'Content-Type':'application/json'
+          },
+          method: 'POST',
+          dataType: 'json',
+          data: json_to_send,
+          success: function(data){
+            $.ajax({
+              url: 'https://webfinal-api.herokuapp.com/login',
+              headers: {
+                  'Content-Type':'application/json'
+              },
+              method: 'POST',
+              dataType: 'json',
+              data: json_to_send,
+              success: function(data){
+                // guardar token en localstorage o cookie
+                localStorage.setItem('token', data.token)
+                window.location = './index.html'
+                console.log(data.token)
+              },
+              error: function(error_msg) {
+                alert((error_msg["responseText"]))
+              }
+            })
+          },
+          error: function(error_msg){
+            alert((error_msg["responseText"]))
+          }
+        })
 
       }
 
