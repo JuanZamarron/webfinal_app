@@ -27,6 +27,8 @@
 
 .menu-right{
     float: right !important;
+    color: black;
+    text-decoration: none;
 }
 
 .menu-left{

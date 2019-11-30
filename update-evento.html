@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/styles-calendar.css">
+  <link rel="stylesheet" type="text/css" href="css/styles2.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-form.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-sidebar.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-topnav.css">
+  <link rel="stylesheet" type="text/css" href="css/styles-popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+</head>
+<body>
+  <div class="topnav menu" id='topnav' style=" top: 0px; position: fixed;" >
+        <a title="Perfil" class=" fa fa-bars menu-left" onclick="openNav()" > </a>
+        <a title="Algo" class="menu-left" href='index.html' >Eventos Disponibles</a>
+        <a title="Algo" class="menu-left" href='crear-evento.html' >Crear Evento</a>
+        <a title="Algo" class="menu-left" href='login.html' >Login</a>
+        <a title="Algo" class="menu-left" href='ver_eventos_asistente.html' >Ver Eventos Como Asistente</a>
+        <a title="Home" class=" fa fa-home menu-right" ></a>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <br>
+  <br>
+  <div>
+    <h1>Crear Evento</h1>
+  </div>
+
+  <section>
+      
+    <div class="div-form">
+    <form action="">
+        
+        <label for="nombre">Nombre del Evento</label>
+        <input type="text" id="updateNombreEvento" name="nombreEvento" placeholder="Babunny..">
+        <br>
+        
+        
+        <div class="container">
+            <label>Fecha</label>
+            <input type="text" id="updateDatepicker" value="21/11/2019"/>
+        </div>
+
+        
+        
+        <div>
+            <label for="horaInicio" >Hora Inicio</label>
+            <br>
+            <input type="time" id="updateTimeInicio" name="appt" value="18:30"  required>
+        </div>
+        
+        <div>
+            <label for="horaInicio">Hora Termino</label>
+            <br>
+            <input type="time" id="updateTimeTermino" name="appt" value="23:30" required>
+        </div>
+
+        <div>
+
+        
+        <br>
+        <a   class="redondo-registro" onclick="getDatosEvento2(this)"> Actualizar Evento</a>
+        <br>
+        <br>
+
+      </form>
+      
+    </div>
+
+
+  </section>
+
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="confirmarCompra(this)"><i class="fas fa-times"></i></a>
+      <h3>CONFIRMAR COMPRA</h3>
+      <h4 id='h4-costo-total-popup'>Costo total [monto del costo]</h4>
+      <div class="div-cosa-verde" >
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="confirmarCompra(this)"> CONFIRMAR</a>
+    </div>
+    </div>
+  </div>
+  
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
+  <script type="text/javascript" src="js/ver_eventos_organizador.js"></script>
+  
+
+</body>
+</html>

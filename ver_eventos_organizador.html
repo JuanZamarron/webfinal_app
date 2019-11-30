@@ -41,12 +41,16 @@
         <div id="evento1" class="evento-registro" >
           <div class="cosas-izquierda" >
             <div class="div-cosas" >
-              <a>Nombre Evento</a>
+              <a id="nombreEvento1" val="Nombremamalon" >Nombre Evento</a>
             </div>
             <div class="div-cosas" >
                 <a>Costo: $1000</a>
             </div>
             
+            <div class="div-cosas" >
+              <a>Estatus Actual: [Estatus]</a>
+            </div>
+
             <div class="div-cosas" >
                 <a>Numero de Asistentes: 64</a>
               </div>
@@ -63,6 +67,12 @@
                 <div class="div-cosas" >
                   <a>HoraInicio HoraFinal</a>
                 </div>
+                <div class="div-cosa-verde" >
+                  <a id="actualizarEvento" class="redondo-registro" href='update-evento.html' onclick="datosEvento()" > Actualizar Evento </a>
+              </div>
+              <div class="div-cosa-verde" >
+                <a id="changeStatus" class="redondo-registro" onclick="cambiaStatus()" > Cambiar Estatus </a>
+            </div>
           </div>
           
         </div>
@@ -123,11 +133,11 @@
 
   <div class="overlay" id="overlay">
     <div class="popup" id="popup">
-      <a id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="confirmarCompra(this)"><i class="fas fa-times"></i></a>
-      <h3>CONFIRMAR COMPRA</h3>
-      <h4 id='h4-costo-total-popup'>Costo total [monto del costo]</h4>
+      <a id="btn-cerrar-popup" class="btn-cerrar-popup" onclick="cerrarConfirmacion(this)"><i class="fas fa-times"></i></a>
+      <h3>ESTAS A PUNTO DE CAMBIAR EL STATUS DE TU EVENTO</h3>
+      <h4 id='h4-costo-total-popup'>Estatus Actual [estatus]</h4>
       <div class="div-cosa-verde" >
-        <a id="btn-cerrar-popup" class="redondo-registro" onclick="confirmarCompra(this)"> CONFIRMAR</a>
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="cambiarEstatus(this)"> CAMBIAR</a>
     </div>
     </div>
   </div>
@@ -136,17 +146,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-
-
-    </script>
+  <script type="text/javascript" src="js/ver_eventos_organizador.js"></script>
 
 </body>
 </html>

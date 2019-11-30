@@ -44,7 +44,7 @@
       <br>
       <br>
       <div class="div-cosa-verde" >
-        <a id="btn-cerrar-popup" class="redondo-registro" onclick="login()">  Register  </a>
+        <a id="btn-cerrar-popup" class="redondo-registro" onclick="changePass()">  Change  </a>
         
         <br>
         <br>
@@ -59,51 +59,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  <script>
-    let $overlay = $('#overlay')
-    let $popup = $('#popup')
-    let $h4costototal = $('#h4-costo-total-popup')
-
-    $overlay.addClass('active')
-    $popup.addClass('active')
-
-    function login(){
-      let $password = $('#password')
-      let $confpassword = $('#confirm_password')
-      let $match_password = $('#match_password')
-
-      $match_password.addClass('hidden')
-
-      var loginCorrecto = true
-
-      $email.removeClass('box-incorrecto-rojo')
-      $password.removeClass('box-incorrecto-rojo')
-
-      if( !$password.val() ){
-        loginCorrecto = false
-        $password.addClass('box-incorrecto-rojo')
-      }
-      if( !$confpassword.val() ){
-        loginCorrecto = false
-        $confpassword.addClass('box-incorrecto-rojo')
-      }
-      if( $password.val() != $confpassword.val() ){
-          loginCorrecto = false
-          $confpassword.addClass('box-incorrecto-rojo')
-          $password.addClass('box-incorrecto-rojo')
-          $match_password.removeClass('hidden')
-      }
-
-      if( loginCorrecto ){
-        console.log($password.val())
-        console.log($confpassword.val())
-      }
-
-    }
-
-
-
-  </script>
+  <script type="text/javascript" src="js/changepass.js"></script>
 
 </body>
 </html>

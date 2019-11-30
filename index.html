@@ -18,19 +18,18 @@
         <a title="Algo" class="menu-left" href='login.html' >Login</a>
         <a title="Algo" class="menu-left" href='ver_eventos_asistente.html' >Eventos Asistente</a>
         <a title="Algo" class="menu-left" href='ver_eventos_organizador.html' >Eventos Organizador</a>
-        <a title="Home" class=" fa fa-home menu-right" ></a>
+        <a title="Algo" class="menu-left" href='update-evento.html' >Update Evento</a>
+        <a title="Home" class=" fa fa-home menu-right" href='index.html' ></a>
   </div>
 
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a style='font-size: 100px' class="fas fa-user-circle" href="perfil.html" ></a>
-    <a>Hola Alberto</a>
+    <a style='font-size: 100px' class="fas fa-user-circle" ></a>
+    <a>Hola Alberto!!!</a>
     <a href="changepass.html">Change Password</a>
-    <a href="changepass.html">Mi Perfil</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-    <a href="#">Log out</a>
+    <a href="ver_eventos_asistente.html">Eventos que asistes</a>
+    <a href="ver_eventos_organizador.html">Eventos que organizas</a>
+    <a onclick="logout()">Log out</a>
   </div>
 
   <br>
@@ -170,124 +169,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-    
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-
-    //box de registro para registrase a un evento
-    $('#registro-evento-1').on('click',function(event){
-      let $evento = $('#evento1')
-      let $boxregistro = $('#box-registro-1')
-
-      if( $evento.hasClass('evento') ){
-        $evento.removeClass('evento')
-        $evento.addClass('evento-registro')
-        $boxregistro.removeClass('hidden')
-        let $costototal = $("#textocostototalevento1")
-        auxCostoTotal = $costototal.text()
-        let $costototalboletos = $('#costototalboletosevento1')
-        $costototalboletos.text(auxCostoTotal)
-      }
-      else{
-        $evento.removeClass('evento-registro')
-        $evento.addClass('evento')
-        $boxregistro.addClass('hidden')
-      }
-    })
-
-    //subir y bajar numero de boletos
-    function subirBoletos(thi){
-      let $numeroBoletos = $('#numerodeboletosevento1')
-      let $costototalboletos = $('#costototalboletosevento1')
-      let $costototal = $("#textocostototalevento1")
-
-      auxCostoTotal = $costototal.text()
-      auxNumeroBoletos = $numeroBoletos.text()
-      auxNumeroBoletos = Number(auxNumeroBoletos) + 1
-      $numeroBoletos.text(auxNumeroBoletos)
-      $costototalboletos.text( Number(auxCostoTotal) * auxNumeroBoletos )
-    }
-    
-    function bajarBoletos(thi){
-      let $numeroBoletos = $('#numerodeboletosevento1')
-      let $costototalboletos = $('#costototalboletosevento1')
-      let $costototal = $("#textocostototalevento1")
-      
-      auxCostoTotal = $costototal.text()
-      auxNumeroBoletos = $numeroBoletos.text()
-      if(Number(auxNumeroBoletos) > 1){
-        auxNumeroBoletos = Number(auxNumeroBoletos) - 1
-        $numeroBoletos.text(auxNumeroBoletos)
-        $costototalboletos.text( Number(auxCostoTotal) * auxNumeroBoletos )
-      }     
-    }
-
-    // Funcion de seleccion de servicios para un evento
-    function seleccionDeServicios(thi) {
-      id = thi.id
-
-      let $servicio = $('#' + id)
-      let $costototal = $("#textocostototalevento1")
-      let $costototalboletos = $('#costototalboletosevento1')
-      let $numeroboletos = $('#numerodeboletosevento1')
-        
-
-      auxCostoTotal = $costototal.text()
-      auxCostoServicio = $servicio.data("costo")
-
-      if( $servicio.hasClass('redondo-servicio-not-selected') ){
-        $servicio.removeClass('redondo-servicio-not-selected')
-        $servicio.addClass('redondo-servicio-selected')
-
-        auxCostoTotal = Number(auxCostoTotal) + Number(auxCostoServicio)
-
-        $costototal.text(auxCostoTotal)
-        $costototalboletos.text( Number(auxCostoTotal) * Number($numeroboletos.text()))
-      }
-      else{
-        $servicio.removeClass('redondo-servicio-selected')
-        $servicio.addClass('redondo-servicio-not-selected')
-
-        auxCostoTotal = Number(auxCostoTotal) - Number(auxCostoServicio)
-
-        $costototal.text(auxCostoTotal)
-        $costototalboletos.text( Number(auxCostoTotal) * Number($numeroboletos.text()))
-      }
-    }
-    
-    function abrirConfirmacionDeCompra(thi){
-      id = thi.id
-
-      let $btnAbrirPopup = $('#' + id)
-      let $overlay = $('#overlay')
-      let $popup = $('#popup')
-      let $h4costototal = $('#h4-costo-total-popup')
-      let $costototalevento = $('#costototalboletosevento1')
-
-      $overlay.addClass('active')
-      $popup.addClass('active')
-      $h4costototal.text( "Costo Total: " +  $costototalevento.text() )
-
-    }
-
-    function confirmarCompra(thi){
-      id = thi.id
-
-      let $btnCerrarPopup = $('#btn-cerrar-popup')
-      let $overlay = $('#overlay')
-      let $popup = $('#popup')
-
-      $overlay.removeClass('active')
-      $popup.removeClass('active')     
-
-    }
-
-    </script>
+  <script type="text/javascript" src="js/index.js"></script>
 
 </body>
 </html>
