@@ -1,3 +1,61 @@
+//subir los datos
+
+var token = localStorage.getItem('token');
+if (token) {
+  token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
+}
+
+console.log(token)
+
+function loadEventos() {
+  $.ajax({
+    //url: 'http://localhost:3000/todos',
+    // url: 'https://tuapp.herokuapp.com/todos',
+    url: 'https://webfinal-api.herokuapp.com/getAllEvents',
+    headers: {
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer ' + token
+    },
+    method: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data)
+
+      //let $listaeventos = $('#listaeventos')
+
+      //$list.empty();
+      for( let i = 0; i < data.length; i++) {
+
+        // aqui va su código para agregar los elementos de la lista
+        
+        
+        console.log(data[i].description)
+        console.log(data[i].date)
+        
+        //console.log(data[i].description)
+
+
+        //var algo = '<li><input type="checkbox" name="todo" value="' + i + '"><span>' + data[i].description + '</span></li>'
+
+        //$list.append($(algo))
+        
+                
+        // algo asi:
+        // addTodo(data[i]._id, data[i].description, data[i].completed)
+        // no tienen que usar la funcion de addTodo, es un ejemplo
+        //dataCont = i
+      }
+    },
+    error: function(error_msg) {
+      alert((error_msg['responseText']));
+    }
+  });
+}
+
+loadEventos()
+
+
+
 
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
