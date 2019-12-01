@@ -1,4 +1,8 @@
 
+    var token = localStorage.getItem('token');
+    if (token) {
+      token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
+    }
     let $overlay = $('#overlay')
     let $popup = $('#popup')
     let $h4costototal = $('#h4-costo-total-popup')
@@ -35,8 +39,28 @@
       }
 
       if( changeCorrecto ){
-        console.log($password.val())
-        console.log($confpassword.val())
+        let password = $('#password').val()
+        json_to_send = {
+          "password": password
+        }
+        json_to_send = JSON.stringify(json_to_send)
+        console.log(json_to_send)
+        $.ajax({
+          url: 'https://webfinal-api.herokuapp.com//user/edit',
+          headers: {
+            'Content-Type':'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          method: 'PATCH',
+          dataType: 'json',
+          data: json_to_send,
+          success: function(){
+            alert("Se cambio la contraseña")
+          },
+          error: function(error_msg){
+            alert((error_msg["responseText"]))
+          }
+        })
       }
       else{
         console.log("nel perro")

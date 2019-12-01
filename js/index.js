@@ -483,5 +483,20 @@ loadEventos()
     }
 
     function logout(){
-      console.log("aio popo")
+      $.ajax({
+        url: 'https://webfinal-api.herokuapp.com/logout',
+        headers: {
+          'Content-Type':'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        method: 'POST',
+        dataType: 'json',
+        complete: function(){
+          localStorage.removeItem('token')
+          window.location = './login.html'
+        },
+        error: function(error_msg){
+          alert((error_msg["responseText"]))
+        }
+      })
     }
