@@ -119,7 +119,8 @@
               "otro":otro,
               "concierto": concierto
             },
-	          "assistant": 0
+            "assistant": 0,
+            "status": true
           }
           console.log(json_to_send)
           json_to_send = JSON.stringify(json_to_send)
