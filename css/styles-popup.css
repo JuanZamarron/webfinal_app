@@ -1,5 +1,4 @@
 .overlay {
-	background: rgba(0,0,0,.3);
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -92,3 +91,9 @@
 		opacity: 1;
 	}
 }
+
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #e4e0e0;
+  }

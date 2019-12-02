@@ -161,7 +161,7 @@ if (token) {
                     serviceCosto = servicios[j].price
                     serviceCont = servicios[j].counter
 
-                      insertar = insertar + `<div class="redondo servicio-organizador" style="width: 30%" >
+                      insertar = insertar + `<div class="redondo-serv servicio-organizador" style="width: 30%" >
                                               <a>` + serviceName + `</a>
                                               <br>
                                               <a>$` + serviceCosto + `</a>

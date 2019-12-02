@@ -105,7 +105,7 @@
 
                         for( let j = 0; j < servicios.length; j++) {
                           console.log(servicios[j])
-                            insertar = insertar + `<a class="redondo servicio" >` + servicios[j].service + `</a>`
+                            insertar = insertar + `<a class="redondo-serv servicio" >` + servicios[j].service + `</a>`
                         }
 
                         insertar = insertar + `                     
