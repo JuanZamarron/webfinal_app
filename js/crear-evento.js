@@ -80,6 +80,7 @@
           let nombreEvento = $('#nombreEvento').val()
           let descrEvento = $('#descrEvento').val()
           let radioTipo = $("input[name='tipo']:checked").val()
+          let cover = $('#coverEvento').val()
           let fiesta = false
           let conferencia = false
           let deportivo = false
@@ -110,7 +111,7 @@
 	          "description": descrEvento,
 	          "hourB": timeInicio,
 	          "hourE": timeTermino,
-	          "cover": 150,
+	          "cover": cover,
 	          "services": arrServicio,
 	          "eventT": {
               "fiesta":fiesta,
