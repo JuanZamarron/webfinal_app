@@ -27,7 +27,7 @@
 <div id="mySidenav" class="sidenav">
 <i href="javascript:void(0)" style="text-align:center" class="closebtn sidebar-icon" onclick="closeNav()">&times;</i>
 <a style='font-size: 100px; text-align:center' class="fas fa-user-circle sidebarnolink" ></a>
-<a class="sidebarnolink" >Hola Alberto!!!</a>
+<a class="sidebarnolink" >Hola!!!</a>
 <a class="sidebarlink" href="changepass.html">Change Password</a>
 <a class="sidebarlink"  href="ver_eventos_asistente.html">Eventos que asistes</a>
 <a class="sidebarlink"  href="ver_eventos_organizador.html">Eventos que organizas</a>
@@ -44,15 +44,16 @@
     <form action="">
         
         <label for="nombre">Nombre del Evento</label>
-        <input type="text" id="updateNombreEvento" name="nombreEvento" placeholder="Babunny..">
+        <input type="text" id="updateNombreEvento" name="nombreEvento" value="Babunny..">
         <br>
         
         
         <div class="container">
             <label>Fecha</label>
-            <input type="text" id="updateDatepicker" value="21/11/2019"/>
+            <input type="date" id="updateDatepicker" value="2019-11-21"/>
         </div>
 
+        <br>
         
         
         <div>
@@ -71,7 +72,7 @@
 
         
         <br>
-        <a   class="redondo-registro" onclick="getDatosEvento2(this)"> Actualizar Evento</a>
+        <a   class="redondo-registro" onclick="actualizarEvento(this)"> Actualizar Evento</a>
         <br>
         <br>
 
@@ -98,7 +99,7 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/calendar.js"></script>
-  <script type="text/javascript" src="js/ver_eventos_organizador.js"></script>
+  <script type="text/javascript" src="js/update-evento.js"></script>
   
 
 </body>

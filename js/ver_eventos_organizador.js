@@ -18,13 +18,19 @@ if (token) {
 
 
       
-  function datosEvento(){
+  function datosEvento(thi){
+    id = thi.id
 
-    nombre = $('#nombreEvento1').val()
+    n = id.search("-")
+    idEvento = id.substring(0,n)
+    console.log(idEvento)
+    let $idEvento = $('#' + idEvento)
 
-    console.log($('#nombreEvento1').text())
+    id_evento = $idEvento.data("id")
 
-    console.log(nombre)
+    localStorage.setItem('id_event_update', id_evento)
+    
+
   }
 
   function getDatosEvento2(){
@@ -82,6 +88,7 @@ if (token) {
 
           // aqui va su código para agregar los elementos de la lista
           
+          id = data[i]._id
           price = data[i].cover
           servicios = data[i].services
           
@@ -98,11 +105,13 @@ if (token) {
 
           dateSub = fecha.substring(0,10)
 
+          console.log(id)
+
 
 
           var insertar = `
           <li>
-            <div id="evento1" class="evento-registro" >
+            <div id="evento`+ i +`" data-id=`+ id +` class="evento-registro" >
               <div class="cosas-izquierda" >
                 <div class="div-cosas" >
                   <a id="nombreEvento1" val="Nombremamalon" >` + nameEvent + `</a>
@@ -115,9 +124,6 @@ if (token) {
                   <a> Descripcion: `+ description + `</a>
                 </div>
                 
-                <div class="div-cosas" >
-                  <a>Estatus Actual: [Estatus]</a>
-                </div>
     
                 <div class="div-cosas" >
                     <a>Numero de Asistentes: `+ assistentes +` </a>
@@ -139,11 +145,8 @@ if (token) {
                     <a>  Termino: ` + end + `</a>
                   </div>
                     <div class="div-cosa-verde" >
-                      <a id="actualizarEvento" class="redondo-registro" href='update-evento.html' onclick="datosEvento()" > Actualizar Evento </a>
+                      <a id="evento`+ i +`-actualizarEvento" class="redondo-registro" href='update-evento.html'  onclick="datosEvento(this)" > Actualizar Evento </a>
                   </div>
-                  <div class="div-cosa-verde" >
-                    <a id="changeStatus" class="redondo-registro" onclick="cambiaStatus()" > Cambiar Estatus </a>
-                </div>
               </div>
               
             </div>

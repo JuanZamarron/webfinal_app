@@ -78,11 +78,7 @@
                       <div class="div-cosas" >
                         <a>Organizador: ` + organizador + `</a>
                       </div>
-                      
-                      <div class="div-cosas" >
-                        <a>Activo/Cancelado</a>
-                      </div>
-                      
+                                            
                       <div class="div-cosas" >
                         <a>Precio total: ` + price + `</a>
                       </div>
